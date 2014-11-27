@@ -9,4 +9,5 @@ $.epc.main.searchForm = {
 
 		//$('#todayButton').on('click', $.epc.main.searchController.doSearchForToday());
 	}
+	
 };
