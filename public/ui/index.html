@@ -5,43 +5,31 @@
 	<link rel="stylesheet" href="../css/epc-styles.css"/>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
 	<script src="../js/epc-namespace-1.0.js"></script>
+	<script src="../js/modules/common/epc-utils-1.0.js"></script>
 	<script src="../js/modules/main/epc-main-search-form-1.0.js"></script>
+	<script src="../js/modules/main/epc-main-details-1.0.js"></script>
 	<script>
 		$(document).ready(function() {
 			$.epc.main.searchForm.initUI();
+			$.epc.main.detailForm.initUI();
 		});
 	</script>
 </head>
 <body>
-	<div style='float:left;'>
-		<fieldset>
-			<legend>Search for Payments</legend>
-			<label>Payment Date:</label>
-			<input id="paymentDate" type="text">
-			<button id="todayButton">Today</button>
-			<button id="exportButton">Export</button>
-		</fieldset>
-	</div>
-	<div style='float: left;'>
-		<fieldset>
-			<legend>Create Payment</legend>
-			<button id="newPaymentButton">New Payment</button>
-			<button id="importButton">Import</button>
-		</fieldset>
-	</div>
-	<div style='float:left;'>
-		<div>
-			<input type="checkbox" id="autoRefreshCheck">Auto Refresh every &nbsp;</input>
-			<input type="text" id="autoRefreshSpinner">
-		</div>
-		<div>
-			<input type="radio" id="paymentType" name="paymentType" value="all">Show all payments</input>
-			<input type="radio" id="paymentType" name="paymentType" value="itg">Show ITG support group payments</input>
-		</div>
-		<div>
-			<input type="checkbox" id="showGeneratedCheck">Show Generated Payments</input>
-		</div>
+	<div id="mainSearchForm"></div>
+	<div id="mainDetailTab">
+		<ul>
+			<li><a href="#paymentListTab">Payment List</a></li>
+			<li><a href="#authPendingTab">Authorisation Pending</a></li>
+			<li><a href="#authPaymentsTab">Authorise Payments</a></li>
+			<li><a href="#fundingReportTab">Funding Report Tab</a></li>
+		</ul>
+		<div id="paymentListTab">TBD: paymentListTab</div>
+		<div id="authPendingTab">TBD: authPendingTab</div>
+		<div id="authPaymentsTab">TBD: authPaymentsTab</div>
+		<div id="fundingReportTab">TBD: fundingReportTab</div>
 	</div>
 </body>
 </html>
