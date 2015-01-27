@@ -4,7 +4,7 @@ $.epc.main.searchForm = {
 	_name: "searchForm",
 	
 	applyWidgets: function() {
-		$('#paymentdate').datepicker();
+		$('#paymentDate').datepicker();
 		$('#autoRefreshSpinner').spinner({min: 1});
 	},
 
