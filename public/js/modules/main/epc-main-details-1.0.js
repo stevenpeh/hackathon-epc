@@ -9,7 +9,8 @@ $.epc.main.detailForm = {
     
 	initUI: function() {
 	    this.applyWidgets();
-		$.epc.common.utils.loadTemplate('templates/main-paymentListTab.html', 'paymentListTab');
+	    
+	    $.epc.payment.list.initUI();
 	}
 	
 };

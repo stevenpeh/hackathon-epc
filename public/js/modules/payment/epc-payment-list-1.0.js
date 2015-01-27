@@ -1,0 +1,41 @@
+$.epc.payment = $.epc.payment || {};
+
+$.epc.payment.list = {
+    _name: "paymentList",
+    
+    applyWidgets: function() {
+        var paymentListTable = $('#paymentListTable').dataTable({
+            "ajax": "../testdata/paymentList.json",
+            "columns": [
+                    {"data": "from"},
+                    {"data": "fromBSB"},
+                    {"data": "fromAccount"},
+                    {"data": "to"},
+                    {"data": "toBSB"},
+                    {"data": "toAccount"},
+                    {"data": "amount"},
+                    {"data": "status"},
+                    {"data": "entitySource"},
+                    {"data": "createdOn"},
+                    {"data": "createdBy"},
+                    {"data": "lastUpdatedOn"},
+                    {"data": "lastUpdatedBy"},
+                    {"data": "comments"}
+                ] 
+        });
+        $('#paymentListTable').on('init.dt', function() {
+            console.log("init complete");
+            $('#paymentListTable tbody tr').on('click', function(event) {
+                
+                // console.log(paymentListTable.row().data());
+                var rowObj = $('#paymentListTable').DataTable().row(this).data();
+                console.log(rowObj.from);
+            })
+        })
+    },
+    
+    initUI: function() {
+        $.epc.common.utils.loadTemplate('templates/main-paymentListTab.html', 'paymentListTab')
+            .success(this.applyWidgets.bind(this));
+    }
+}
