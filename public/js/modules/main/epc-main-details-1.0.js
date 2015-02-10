@@ -14,3 +14,5 @@ $.epc.main.detailForm = {
 	}
 	
 };
+
+$.epc.evtBus.subscribe($.epc.evtBus.event.APP_START, null, $.epc.main.detailForm.initUI.bind($.epc.main.detailForm));

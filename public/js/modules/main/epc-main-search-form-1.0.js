@@ -14,3 +14,5 @@ $.epc.main.searchForm = {
 	}
 	
 };
+
+$.epc.evtBus.subscribe($.epc.evtBus.event.APP_START, null,$.epc.main.searchForm.initUI.bind($.epc.main.searchForm));

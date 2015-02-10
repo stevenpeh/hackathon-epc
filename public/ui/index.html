@@ -10,13 +10,15 @@
 	<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 	<script src="../js/epc-namespace-1.0.js"></script>
 	<script src="../js/modules/common/epc-utils-1.0.js"></script>
+	<script src="../js/modules/payment/epc-payment-details-1.0.js"></script>
 	<script src="../js/modules/payment/epc-payment-list-1.0.js"></script>
 	<script src="../js/modules/main/epc-main-search-form-1.0.js"></script>
 	<script src="../js/modules/main/epc-main-details-1.0.js"></script>
 	<script>
 		$(document).ready(function() {
-			$.epc.main.searchForm.initUI();
-			$.epc.main.detailForm.initUI();
+			// $.epc.main.searchForm.initUI();
+			// $.epc.main.detailForm.initUI();
+			$.epc.evtBus.publish($.epc.evtBus.event.APP_START);
 		});
 	</script>
 </head>
@@ -33,6 +35,10 @@
 		<div id="authPendingTab">TBD: authPendingTab</div>
 		<div id="authPaymentsTab">TBD: authPaymentsTab</div>
 		<div id="fundingReportTab">TBD: fundingReportTab</div>
+	</div>
+	
+	<div id="paymentDetails" style="display:none;">
+    	Hello World
 	</div>
 </body>
 </html>

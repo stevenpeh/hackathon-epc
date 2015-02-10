@@ -4,6 +4,8 @@ $.epc.payment.list = {
     _name: "paymentList",
     
     applyWidgets: function() {
+        //$.epc.payment.details.initUI();
+        $.epc.evtBus.publish($.epc.evtBus.event.PAYMENTTAB_LOADED);
         var paymentListTable = $('#paymentListTable').dataTable({
             "ajax": "../testdata/paymentList.json",
             "columns": [
@@ -29,6 +31,10 @@ $.epc.payment.list = {
                 
                 // console.log(paymentListTable.row().data());
                 var rowObj = $('#paymentListTable').DataTable().row(this).data();
+                var rows = $('#paymentListTable').DataTable().rows().data();
+                
+                // $.epc.payment.details.show();
+                $.epc.evtBus.publish($.epc.evtBus.event.PAYMENTLIST_SELECTED, {selected: rowObj, tableData: rows});
                 console.log(rowObj.from);
             })
         })
@@ -36,6 +42,8 @@ $.epc.payment.list = {
     
     initUI: function() {
         $.epc.common.utils.loadTemplate('templates/main-paymentListTab.html', 'paymentListTab')
-            .success(this.applyWidgets.bind(this));
+            .success(
+                this.applyWidgets.bind(this)
+            );
     }
 }
