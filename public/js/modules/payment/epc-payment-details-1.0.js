@@ -18,5 +18,5 @@ $.epc.payment.details = {
     }
 };
 
-$.epc.evtBus.subscribe($.epc.evtBus.event.APP_START, $.epc.payment.details.initUI.bind($.epc.payment.details));
+$.epc.evtBus.subscribe($.epc.evtBus.event.PAYMENTTAB_LOADED, $.epc.payment.details.initUI.bind($.epc.payment.details));
 $.epc.evtBus.subscribe($.epc.evtBus.event.PAYMENTLIST_SELECTED, null, $.epc.payment.details.show.bind($.epc.payment.details));
