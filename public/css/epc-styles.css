@@ -5,3 +5,8 @@
 .ui-spinner-input {
 	width: 20px;
 }
+
+.ui-right-align {
+	text-align: right;
+	padding-right: 10px;
+}
