@@ -10,7 +10,8 @@ $.epc = {
 			        event : {
 			        	APP_START: "appStart",
 			        	PAYMENTTAB_LOADED: "paymentTabLoaded",
-			        	PAYMENTLIST_SELECTED: "paymentListSelected"
+			        	PAYMENTLIST_SELECTED: "paymentListSelected",
+			        	NEW_PAYMENT: "newPayment"
 			        },
 			    }
 
