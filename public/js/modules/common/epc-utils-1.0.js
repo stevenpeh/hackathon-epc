@@ -21,5 +21,15 @@ $.epc.common.utils = {
         for(var i=0; i<fieldNames.length; i++) {
             uiFields[fieldNames[i]].text( data[fieldNames[i]]);
         }
+    },
+    populateDataModel: function(uiFields, fieldNames, data) {
+        for(var i=0; i<fieldNames.length; i++) {
+            data[fieldNames[i]] = uiFields[fieldNames[i]].val();
+        }
+    },
+    resetUIFields: function(uiFields, fieldNames) {
+        for (var i=0; i<fieldNames.length; i++) {
+            uiFields[fieldNames[i]].text("");
+        }
     }
 };

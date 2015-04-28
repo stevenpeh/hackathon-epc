@@ -10,3 +10,8 @@
 	text-align: right;
 	padding-right: 10px;
 }
+
+.validation-error {
+	font-weight: bold;
+	color: red;
+}

@@ -1,18 +1,27 @@
 	
 	<div id="paymentEntry" style="display: none;">
-		<div class="ui-widget" style="float: left;">
+		<div class="ui-widget" >
 			<fieldset>
 				<legend>From Account:</legend>
-				<label for="fromAccountName">Account Name:</label>
-				<input type="text" id="fromAccountName">
-				<label for="fromBsb">BSB:</label>
-				<input type="text" id="fromBsb">
-				<label for="fromAccountNumber">Account Number:</label>
-				<input type="text" id="fromAccountNumber">
+				<div>
+					<label for="fromAccountName">Account Name:</label>
+					<input type="text" id="fromAccountName">
+					<span id="fromAccountNameError" class="validation-error"></span>					
+				</div>
+				<div>
+					<label for="fromBsb">BSB:</label>
+					<input type="text" id="fromBsb">
+					<span id="fromBsbError" class="validation-error"></span>					
+				</div>
+				<div>
+					<label for="fromAccountNumber">Account Number:</label>
+					<input type="text" id="fromAccountNumber">
+					<span id="fromAccountNumberError" class="validation-error"></span>					
+				</div>
 				<button id="fromAccountSelect">Select from list</button>
 			</fieldset>
 		</div>
-		<div class="ui-widget" style="float: left;">
+		<div class="ui-widget">
 			<fieldset>
 				<legend>To Account:</legend>
 				<label for="toAccountName">Account Name:</label>
