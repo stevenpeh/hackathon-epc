@@ -1,11 +1,11 @@
 epc.main = epc.main || {};
 
 epc.main.dashboard = {
-	pages: {"dashboard":0, "newPayment": 1},
+	pages: {"main":0, "newPayment": 1},
 
 	initUI: function() {
 		var loadPromise = epc.createPromise();
-		epc.common.uiWizard.init("dashboardWiz", this.pages["dashboard"], loadPromise);
+		epc.common.uiWizard.init("dashboardWiz", this.pages["main"], loadPromise);
 
 		var mainFormPromise = epc.createPromise();
 		var mainDetailPromise = epc.createPromise();
