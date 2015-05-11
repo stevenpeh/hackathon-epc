@@ -10,11 +10,13 @@
 	<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 	<script src="../js/epc-namespace-1.0.js"></script>
 	<script src="../js/modules/common/epc-utils-1.0.js"></script>
+	<script src="../js/modules/common/epc-ui-wizard-1.0.js"></script>
 	<script src="../js/modules/payment/epc-payment-details-1.0.js"></script>
 	<script src="../js/modules/payment/epc-payment-list-1.0.js"></script>
 	<script src="../js/modules/payment/epc-payment-entry-1.0.js"></script>
 	<script src="../js/modules/main/epc-main-search-form-1.0.js"></script>
 	<script src="../js/modules/main/epc-main-details-1.0.js"></script>
+	<script src="../js/modules/main/epc-dashboard-1.0.js"></script>
 	<script>
 		$(document).ready(function() {
 			// $.epc.main.searchForm.initUI();
@@ -24,19 +26,26 @@
 	</script>
 </head>
 <body>
-	<div id="mainSearchForm"></div>
-	<div id="mainDetailTab">
-		<ul>
-			<li><a href="#paymentListTab">Payment List</a></li>
-			<li><a href="#authPendingTab">Authorisation Pending</a></li>
-			<li><a href="#authPaymentsTab">Authorise Payments</a></li>
-			<li><a href="#fundingReportTab">Funding Report Tab</a></li>
-		</ul>
-		<div id="paymentListTab">TBD: paymentListTab</div>
-		<div id="authPendingTab">TBD: authPendingTab</div>
-		<div id="authPaymentsTab">TBD: authPaymentsTab</div>
-		<div id="fundingReportTab">TBD: fundingReportTab</div>
-	</div>
-	
+	<div id="dashboardWiz">
+		<div id="dashboard">
+			<div id="mainSearchForm"></div>
+			<div id="mainDetailTab">
+				<ul>
+					<li><a href="#paymentListTab">Payment List</a></li>
+					<li><a href="#authPendingTab">Authorisation Pending</a></li>
+					<li><a href="#authPaymentsTab">Authorise Payments</a></li>
+					<li><a href="#fundingReportTab">Funding Report Tab</a></li>
+				</ul>
+				<div id="paymentListTab">TBD: paymentListTab</div>
+				<div id="authPendingTab">TBD: authPendingTab</div>
+				<div id="authPaymentsTab">TBD: authPaymentsTab</div>
+				<div id="fundingReportTab">TBD: fundingReportTab</div>
+			</div>			
+		</div>
+		<div id="newPayment">
+			// TODO
+			<button id="newPaymentCancel">Cancel</button>
+		</div>
+	</div>	
 </body>
 </html>

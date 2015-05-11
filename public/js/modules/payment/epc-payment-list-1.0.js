@@ -5,7 +5,6 @@ epc.payment.list = {
     
     applyWidgets: function() {
         //epc.payment.details.initUI();
-        epc.evtBus.publish(epc.evtBus.event.PAYMENTTAB_LOADED);
         var paymentListTable = $('#paymentListTable').dataTable({
             "ajax": "../testdata/paymentList.json",
             "columns": [
@@ -37,7 +36,9 @@ epc.payment.list = {
                 epc.evtBus.publish(epc.evtBus.event.PAYMENTLIST_SELECTED, {selected: rowObj, tableData: rows});
                 console.log(rowObj.from);
             })
-        })
+        });
+
+        epc.evtBus.publish(epc.evtBus.event.PAYMENTTAB_LOADED);
     },
     
     initUI: function() {

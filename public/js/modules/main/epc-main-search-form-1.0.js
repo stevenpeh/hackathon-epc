@@ -8,7 +8,9 @@ epc.main.searchForm = {
 		$('#autoRefreshSpinner').spinner({min: 1});
 		$('#newPaymentButton').button().click(function(event) {
 			epc.evtBus.publish(epc.evtBus.event.NEW_PAYMENT);
-		});		
+		});	
+
+		epc.evtBus.publish(epc.evtBus.event.MAIN_FORM_STARTED);	
 	},
 
 	initUI: function() {

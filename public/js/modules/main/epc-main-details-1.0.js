@@ -5,6 +5,12 @@ epc.main.detailForm = {
 
     applyWidgets: function() {
 		$('#mainDetailTab').tabs();
+
+		epc.evtBus.subscribe(epc.evtBus.event.PAYMENTTAB_LOADED, null, function() {
+			// we're only done when payment list is done
+			epc.evtBus.publish(epc.evtBus.event.MAIN_DETAILS_STARTED);
+		});
+
     },
     
 	initUI: function() {
