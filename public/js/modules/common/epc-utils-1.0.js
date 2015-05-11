@@ -1,6 +1,6 @@
-$.epc.common = {};
+epc.common = {};
 
-$.epc.common.utils = {
+epc.common.utils = {
     loadTemplate: function(url, id) {
 		return $.ajax({
 			url: url,

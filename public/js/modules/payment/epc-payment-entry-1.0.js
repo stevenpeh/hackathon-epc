@@ -1,6 +1,6 @@
-$.epc.payment = $.epc.payment || {};
+epc.payment = epc.payment || {};
 
-$.epc.payment.entry = {
+epc.payment.entry = {
     fieldNames: ["fromAccountName", "fromBsb",  "fromAccountNumber"],
     errorFieldNames: ["fromAccountNameError", "fromBsbError", "fromAccountNumberError"],
     uiFields: {},
@@ -24,14 +24,14 @@ $.epc.payment.entry = {
         return error;
     },
     validation: function() {
-        $.epc.common.utils.populateDataModel(this.uiFields, this.fieldNames, this.dataModel);
+        epc.common.utils.populateDataModel(this.uiFields, this.fieldNames, this.dataModel);
 
         var error = {};
         this.validateBsb(error);
         return error;
     },
     displayValidationErrors: function(validationErrors) {
-        $.epc.common.utils.populateUIFields(this.errorUIFields, this.errorFieldNames, validationErrors);
+        epc.common.utils.populateUIFields(this.errorUIFields, this.errorFieldNames, validationErrors);
     },
     disableForm: function() {
         $("#paymentEntry input,textarea,button").attr("disabled", "disabled");
@@ -41,7 +41,7 @@ $.epc.payment.entry = {
     },
     submit: function() {
         console.log("Submitting");
-        $.epc.common.utils.resetUIFields(this.errorUIFields, this.errorFieldNames);
+        epc.common.utils.resetUIFields(this.errorUIFields, this.errorFieldNames);
         this.disableForm();
         var validationErrors = this.validation();
         if (validationErrors) {
@@ -56,9 +56,9 @@ $.epc.payment.entry = {
         $("#close").button().click(this.close.bind(this));
         $("#submit").button().click(this.submit.bind(this));
         
-        $.epc.common.utils.initUIFields(this.uiFields, this.fieldNames);
-        $.epc.common.utils.initUIFields(this.errorUIFields, this.errorFieldNames);
+        epc.common.utils.initUIFields(this.uiFields, this.fieldNames);
+        epc.common.utils.initUIFields(this.errorUIFields, this.errorFieldNames);
     }
 };
 
-$.epc.evtBus.subscribe($.epc.evtBus.event.NEW_PAYMENT, null, $.epc.payment.entry.initUI.bind($.epc.payment.entry));
+epc.evtBus.subscribe(epc.evtBus.event.NEW_PAYMENT, null, epc.payment.entry.initUI.bind(epc.payment.entry));
