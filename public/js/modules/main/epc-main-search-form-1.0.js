@@ -3,6 +3,13 @@ epc.main = epc.main || {};
 epc.main.searchForm = {
 	_name: "searchForm",
 	
+	handleSearchResults: function(data) {
+		epc.evtBus.publish(epc.evtBus.event.DATA_MODEL_RAW_UPDATED, data);
+	},
+	doSearch: function() {
+		epc.ajax("../testdata/paymentList.json").done(this.handleSearchResults);
+	},
+
 	applyWidgets: function() {
 		$('#paymentDate').datepicker();
 		$('#autoRefreshSpinner').spinner({min: 1});
@@ -10,6 +17,7 @@ epc.main.searchForm = {
 			epc.evtBus.publish(epc.evtBus.event.NEW_PAYMENT);
 		});	
 
+		this.doSearch();
 		epc.evtBus.publish(epc.evtBus.event.MAIN_FORM_STARTED);	
 	},
 

@@ -17,10 +17,9 @@
 	<script src="../js/modules/main/epc-main-search-form-1.0.js"></script>
 	<script src="../js/modules/main/epc-main-details-1.0.js"></script>
 	<script src="../js/modules/main/epc-dashboard-1.0.js"></script>
+	<script src="../js/modules/main/epc-datamodel-controller-1.0.js"></script>
 	<script>
 		$(document).ready(function() {
-			// $.epc.main.searchForm.initUI();
-			// $.epc.main.detailForm.initUI();
 			epc.evtBus.publish(epc.evtBus.event.APP_START);
 		});
 	</script>
@@ -45,6 +44,8 @@
 		<div id="newPayment">
 			// TODO
 			<button id="newPaymentCancel">Cancel</button>
+		</div>
+		<div id="paymentDetails">
 		</div>
 	</div>	
 </body>

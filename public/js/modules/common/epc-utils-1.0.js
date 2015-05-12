@@ -31,5 +31,24 @@ epc.common.utils = {
         for (var i=0; i<fieldNames.length; i++) {
             uiFields[fieldNames[i]].text("");
         }
+    },
+
+    table: {
+        repopulate: function(table, data) {
+            table.DataTable().clear();
+            table.DataTable().rows.add(data);
+            table.DataTable().draw();
+        },
+
+        getAllRowData: function(table) {
+            return table.DataTable().rows().data();
+        },
+
+        getSelectedRow: function(table, row) {
+            return table.DataTable().row(row).data();
+        },
+        addRowSelectionHandler: function(table, handler) {
+            $('tbody tr', table).on('click', handler);
+        }
     }
 };
