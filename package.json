@@ -2,6 +2,7 @@
   "name": "epc",
   "version": "0.0.1",
   "dependencies": {
-    "express": "~4.10.2"
+    "express": "~4.10.2",
+    "body-parser": "~1.11.0"
   }
 }
