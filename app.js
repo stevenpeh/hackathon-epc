@@ -20,7 +20,15 @@ app.post('/services/login', function(req, res) {
 		res.status(404).send("invalid user");
 	} else {
 		//mock success
-		res.send(JSON.stringify({loginStatus: "success"}));
+		if (username === "viewer1") {
+			res.send(JSON.stringify({roles: ["Viewer"]}));			
+		} else if (username === "viewer2") {
+			res.send(JSON.stringify({roles: ["Viewer", "AdminViewer"]}));
+		} else if (username === "creator") {
+			res.send(JSON.stringify({roles: ["Creator", "AdminViewer"]}));
+		} else {
+			res.send(JSON.stringify({roles: ["Authoriser", "Admin"]}));			
+		}
 	}
 });
 
