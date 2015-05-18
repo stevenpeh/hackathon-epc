@@ -38,7 +38,9 @@ var epc = {
         	DATA_MODEL_ALL_UPDATED: "dataModelAllUpdated",
         	DATA_MODEL_CREATED_UPDATED: "dataModelCreatedUpdated",
         	DATA_MODEL_AUTHORISED_UPDATED: "dataModelAuthorisedUpdated",
-        	VIEW_CLOSE: "viewClose"
+        	VIEW_CLOSE: "viewClose",
+        	FSPROGRESS_START: "fsProgressStart",
+        	FSPROGRESS_STOP: "fsProgressStop"
         },
     }
 

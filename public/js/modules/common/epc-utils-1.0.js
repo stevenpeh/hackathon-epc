@@ -1,12 +1,12 @@
-epc.common = {};
+epc.common = epc.common || {};
 
 epc.common.utils = {
-    loadTemplate: function(url, id) {
+    loadTemplate: function(url, id, content) {
 		return $.ajax({
 			url: url,
 			success: function(data) {
 				var template = Handlebars.compile(data);
-				$('#' + id).html(template());
+				$('#' + id).html(template(content));
 			}
 		});
     },
