@@ -35,3 +35,35 @@
 	zoom: 1;
 	vertical-align: middle;
 }
+
+.epc-container-row {
+	display: flex;	
+}
+
+.epc-container-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.epc-container-form-labels {
+	display: flex;
+	flex-direction: column;
+	order: 1;
+	flex-grow: 1;
+}
+
+.epc-container-form-inputs {
+	display: flex;
+	flex-direction: column;
+	order: 2;
+	flex-grow: 7;
+}
+
+.epc-container-form-labels label {
+	text-align: right;
+	padding: 5px;
+}
+
+.epc-container-form-inputs label,input {
+	padding: 5px;
+}

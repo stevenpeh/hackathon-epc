@@ -4,6 +4,7 @@
 	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 	<link rel="stylesheet" href="../css/epc-styles.css"/>
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css"/>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -30,8 +31,11 @@
 <body>
 	<div id="menubar"></div>
 	<div id="dashboardWiz">
-		<div id="main">
-			<div id="mainSearchForm"></div>
+		<div id="main" class="epc-container-col">
+			<div id="mainSearchForm" class="epc-container-row"></div>
+			<div class='ui-widget' id="searchSummary" style="clear: both;">
+				<p>Results Returned: <label id="resultsReturnedLabel"></label></p>
+			</div>
 			<div id="mainDetailTab">
 				<ul>
 					<li><a href="#paymentListTab">Payment List</a></li>
@@ -49,7 +53,7 @@
 			// TODO
 			<button id="newPaymentCancel">Cancel</button>
 		</div>
-		<div id="paymentDetails">
+		<div id="paymentDetails"  class="epc-container-col">
 		</div>
 	</div>	
 </body>

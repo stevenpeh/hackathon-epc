@@ -13,12 +13,9 @@ epc.payment.entry = {
         if (this.dataModel['fromBsb'] === undefined || this.dataModel['fromBsb'] === "") {
             error['fromBsbError'] = "No BSB Provided";
         } else {
-            if (this.dataModel['fromBsb'].length === 7) {
-                if (this.dataModel['fromBsb'].substring(3,4) !== '-') {
-                    error['fromBsbError'] = "Invalid BSB format";
-                }
-            } else {
-                error['fromBsbError'] = "Invalid BSB format";
+            var myRe = /^\d{3}-\d{3}$/;
+            if (myRe.exec(this.dataModel['fromBsb']) === null) {
+                error['fromBsbError'] = "Invalid BSB format";                
             }
         }
         return error;

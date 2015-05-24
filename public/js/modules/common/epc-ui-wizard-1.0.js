@@ -30,7 +30,7 @@ epc.common.uiWizard = {
 		_showPage: function(page) {
 			var promise = epc.createPromise();
 			
-			page.css('display', 'block').animate({'opacity': 1}, {complete: function() {
+			page.css('display', 'flex').animate({'opacity': 1}, {complete: function() {
 				promise.resolve();
 			}});
 			return promise;

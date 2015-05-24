@@ -16,6 +16,15 @@ epc.main.searchForm = {
 		$('#newPaymentButton').button().click(function(event) {
 			epc.evtBus.publish(epc.evtBus.event.NEW_PAYMENT);
 		});	
+		$('#importButton').button().click(function(event) {
+			// TODO
+		});	
+		$('#todayButton').button().click(function(event) {
+			// TODO
+		});		
+		$('#exportButton').button().click(function(event) {
+			// TODO
+		});
 
 		this.doSearch();
 		epc.evtBus.publish(epc.evtBus.event.MAIN_FORM_STARTED);	
