@@ -17,6 +17,7 @@ epc.main.detailForm = {
 	    this.applyWidgets();
 	    
 	    epc.payment.list.initUI();
+	    epc.payment.auth.initUI();
 	}
 	
 };

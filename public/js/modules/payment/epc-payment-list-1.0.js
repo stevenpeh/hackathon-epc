@@ -3,6 +3,8 @@ epc.payment = epc.payment || {};
 epc.payment.list = {
     _tableRef: undefined,
     _name: "paymentList",
+    _tableID: undefined,
+    _containerID: undefined,
     
     updateTable: function(evt, data) {
         epc.common.utils.table.repopulate(this._tableRef, data.data);       
@@ -17,7 +19,7 @@ epc.payment.list = {
     },
 
     applyWidgets: function() {
-        this._tableRef = $('#paymentListTable');
+        this._tableRef = epc.lookup("#" + this._tableID);
 
         //epc.payment.details.initUI();
         var paymentListTable = this._tableRef.dataTable({
@@ -42,13 +44,15 @@ epc.payment.list = {
     },
     
     initUI: function() {
-        epc.common.utils.loadTemplate('templates/main-paymentListTab.html', 'paymentListTab')
+        epc.common.utils.loadTemplate('templates/main-paymentListTab.html', this._containerID, {id: this._tableID})
             .success(
                 this.applyWidgets.bind(this)
             );
     }
 };
 
+epc.payment.list._containerID="paymentListTab";
+epc.payment.list._tableID="paymentListTable";
 
 epc.evtBus.subscribe(epc.evtBus.event.DATA_MODEL_ALL_UPDATED, null, 
     epc.payment.list.updateTable.bind(epc.payment.list));
