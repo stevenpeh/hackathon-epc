@@ -5,8 +5,11 @@ epc.payment.list = {
     _name: "paymentList",
     _tableID: undefined,
     _containerID: undefined,
+    _completedEventId: undefined,
+    _dataEvent: undefined,
     
     updateTable: function(evt, data) {
+        console.log("event:" + evt.type + " Name: " + this._name + " tableID: " + this._tableID + " containerId: " + this._containerID);
         epc.common.utils.table.repopulate(this._tableRef, data.data);       
         epc.common.utils.table.addRowSelectionHandler(this._tableRef, this.handleRowSelected.bind(this));
     },
@@ -40,7 +43,12 @@ epc.payment.list = {
                     {"data": "comments"}
                 ] 
         });
-        epc.evtBus.publish(epc.evtBus.event.PAYMENTTAB_LOADED);
+
+        epc.evtBus.subscribe(this._dataEvent, null, this.updateTable.bind(this));        
+
+        // epc.evtBus.publish(epc.evtBus.event.PAYMENTTAB_LOADED);
+        epc.evtBus.publish(this._completedEventId);
+
     },
     
     initUI: function() {
@@ -53,6 +61,7 @@ epc.payment.list = {
 
 epc.payment.list._containerID="paymentListTab";
 epc.payment.list._tableID="paymentListTable";
+epc.payment.list._completedEventId = epc.evtBus.event.PAYMENTTAB_LOADED;
+epc.payment.list._dataEvent = epc.evtBus.event.DATA_MODEL_ALL_UPDATED;
 
-epc.evtBus.subscribe(epc.evtBus.event.DATA_MODEL_ALL_UPDATED, null, 
-    epc.payment.list.updateTable.bind(epc.payment.list));
+epc.evtBus.subscribe(epc.evtBus.event.MAIN_DETAILS_STARTING, null, epc.payment.list.initUI.bind(epc.payment.list));

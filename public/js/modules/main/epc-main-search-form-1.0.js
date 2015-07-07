@@ -26,7 +26,7 @@ epc.main.searchForm = {
 			// TODO
 		});
 
-		this.doSearch();
+		epc.evtBus.subscribe(epc.evtBus.event.MAIN_DETAILS_STARTED, null, this.doSearch.bind(this));
 		epc.evtBus.publish(epc.evtBus.event.MAIN_FORM_STARTED);	
 	},
 

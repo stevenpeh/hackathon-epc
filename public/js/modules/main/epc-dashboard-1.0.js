@@ -17,7 +17,7 @@ epc.main.dashboard = {
 			mainDetailPromise.resolve();
 		});
 
-		epc.aggregatePromises(mainFormPromise, mainDetailPromise).then(function() {
+		epc.aggregatePromises()(mainFormPromise, mainDetailPromise).then(function() {
 			loadPromise.resolve();
 		});
 	},
