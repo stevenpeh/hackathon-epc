@@ -27,7 +27,7 @@ epc.main.detailForm = {
 			authorisedPromise.resolve();			
 		});
 
-		epc.aggregatePromises()(paymentPromise, authPromise, authorisedPromise).then(function() {
+		epc.aggregatePromises2(paymentPromise, authPromise, authorisedPromise).then(function() {
 			epc.evtBus.publish(epc.evtBus.event.MAIN_DETAILS_STARTED);
 		});
 

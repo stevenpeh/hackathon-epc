@@ -1,6 +1,7 @@
 var epc = {
+	
 	aggregatePromises: function() {
-		return $.when;
+		return $.when.apply($, arguments);
 	},
 
 	createPromise: function() {
